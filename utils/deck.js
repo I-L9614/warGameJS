@@ -42,7 +42,7 @@ export function createDeck() {
     return deck
 }
 
-function shuffle(deck) {
+export function shuffle(deck) {
     for(let i = 0;i<1000;i++) {
         let firstCard =  Math.floor(Math.random()*createDeck().length)
         let secondCard =  Math.floor(Math.random()*createDeck().length)
@@ -56,4 +56,4 @@ function shuffle(deck) {
     return deck
 }
 
-
+console.log(shuffle(createDeck()))
