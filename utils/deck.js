@@ -28,21 +28,32 @@ export function compareCards(p1Card, p2Card) {
         return 'WAR'
     }
 }
-const RANKS = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A']
-const SUITS = ['H', 'C', 'D', 'S']
 
 export function createDeck() {
-    let desk = []
+    const RANKS = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A']
+    const SUITS = ['H', 'C', 'D', 'S']
+    const deck = []
     for (let i = 0; i < RANKS.length; i++) {
         for (let j = 0; j < SUITS.length; j++) {
-            let card = createCard(RANKS[i], SUITS[j])
-            desk.push(card)
+            const card = createCard(RANKS[i], SUITS[j])
+            deck.push(card)
         }
     }
-    return desk
+    return deck
 }
 
 function shuffle(deck) {
-
+    for(let i = 0;i<1000;i++) {
+        let firstCard =  Math.floor(Math.random()*createDeck().length)
+        let secondCard =  Math.floor(Math.random()*createDeck().length)
+        if(firstCard===secondCard) {
+            secondCard =  Math.floor(Math.random()*createDeck().length)
+            continue
+        } else {
+            [deck[firstCard],deck[secondCard]]=[deck[secondCard],deck[firstCard]]
+        }
+    }
+    return deck
 }
-console.log(createDeck().length)
+
+
