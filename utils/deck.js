@@ -43,17 +43,17 @@ export function createDeck() {
 }
 
 export function shuffle(deck) {
-    for(let i = 0;i<1000;i++) {
-        let firstCard =  Math.floor(Math.random()*createDeck().length)
-        let secondCard =  Math.floor(Math.random()*createDeck().length)
-        if(firstCard===secondCard) {
-            secondCard =  Math.floor(Math.random()*createDeck().length)
+    for (let i = 0; i < 1000; i++) {
+        let firstCard = Math.floor(Math.random() * createDeck().length)
+        let secondCard = Math.floor(Math.random() * createDeck().length)
+        if (firstCard === secondCard) {
+            secondCard = Math.floor(Math.random() * createDeck().length)
             continue
         } else {
-            [deck[firstCard],deck[secondCard]]=[deck[secondCard],deck[firstCard]]
+            [deck[firstCard], deck[secondCard]] = [deck[secondCard], deck[firstCard]]
         }
     }
     return deck
 }
 
-console.log(shuffle(createDeck()))
+export const deck = shuffle(createDeck())
