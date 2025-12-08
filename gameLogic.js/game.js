@@ -29,7 +29,7 @@ export function initGame() {
     const arr = [player, AI]
     for (let i = 0; i < arr.length; i++) {
         for (let j = 0; j < 26; j++) {
-            const card = shufelDeck.pop()
+            const card = shufelDeck.shift()
             arr[i].hand.push(card)
         }
     }
