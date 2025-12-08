@@ -41,8 +41,8 @@ export function initGame() {
 }
 
 export function playRound(p1, p2) {
-    const player = p1.hand.pop()
-    const AI = p2.hand.pop()
+    const player = p1.hand.shift()
+    const AI = p2.hand.shift()
     if (player.value > AI.value) {
         p1.wonPile.push(player, AI)
         console.log(p1.name,player ,p2.name,AI)
