@@ -44,10 +44,10 @@ export function createDeck() {
 
 export function shuffle(deck) {
     for (let i = 0; i < 1000; i++) {
-        const firstCard = Math.floor(Math.random() * createDeck().length)
-        let secondCard = Math.floor(Math.random() * createDeck().length)
+        const firstCard = Math.floor(Math.random() * deck.length)
+        let secondCard = Math.floor(Math.random() * deck.length)
         if (firstCard === secondCard) {
-            secondCard = Math.floor(Math.random() * createDeck().length)
+            secondCard = Math.floor(Math.random() * deck.length)
             continue
         } else {
             [deck[firstCard], deck[secondCard]] = [deck[secondCard], deck[firstCard]]
