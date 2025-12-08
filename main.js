@@ -9,10 +9,10 @@ function game() {
         playRound(start.player, start.AI)
     }
     if (start.player.wonPile.length > start.AI.wonPile.length) {
-        return `the winner is ${start.player.name}: congrats`
+        return `the winner is ${start.player.name},with ${start.player.wonPile.length} cards: congrats`
     }
     if (start.AI.wonPile.length > start.player.wonPile.length) {
-        return `the winner is ${start.AI.name}: congrats`
+        return `the winner is ${start.AI.name},with ${start.AI.wonPile.length} cards: congrats`
     }
     else {
         console.log(start.AI.wonPile.length)

@@ -44,7 +44,7 @@ export function createDeck() {
 
 export function shuffle(deck) {
     for (let i = 0; i < 1000; i++) {
-        let firstCard = Math.floor(Math.random() * createDeck().length)
+        const firstCard = Math.floor(Math.random() * createDeck().length)
         let secondCard = Math.floor(Math.random() * createDeck().length)
         if (firstCard === secondCard) {
             secondCard = Math.floor(Math.random() * createDeck().length)
