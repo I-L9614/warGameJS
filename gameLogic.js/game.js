@@ -45,11 +45,15 @@ export function playRound(p1, p2) {
     const AI = p2.hand.pop()
     if (player.value > AI.value) {
         p1.wonPile.push(player, AI)
+        console.log(p1.name,player ,p2.name,AI)
         console.log(`${p1.name} wone this round: `)
+        console.log('==========================')
     }
     if (AI.value > player.value) {
         p2.wonPile.push(player, AI)
+        console.log(p2.name,AI ,p1.name,player)
         console.log(`${p2.name} wone this round: `)
+        console.log('===========================')
     }
     else {
     }
